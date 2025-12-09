@@ -12,13 +12,13 @@ const Header = () => {
                 </div>
                 <div className="carousel-inner" style={{ height: '100%' }}>
                     <div className="carousel-item active" style={{ height: '100%' }}>
-                        <img src="/img/frothy-pint-beer-wooden-table-pub-generated-by-artificial-intelligence.jpg" className="d-block w-100" style={{ height: '100%', objectFit: 'cover' }} alt="..." />
+                        <img src={`${import.meta.env.BASE_URL}img/frothy-pint-beer-wooden-table-pub-generated-by-artificial-intelligence.jpg`} className="d-block w-100" style={{ height: '100%', objectFit: 'cover' }} alt="..." />
                     </div>
                     <div className="carousel-item" style={{ height: '100%' }}>
-                        <img src="/img/wp9254925-alcohol-4k-wallpapers.jpg" className="d-block w-100" style={{ height: '100%', objectFit: 'cover' }} alt="..." />
+                        <img src={`${import.meta.env.BASE_URL}img/wp9254925-alcohol-4k-wallpapers.jpg`} className="d-block w-100" style={{ height: '100%', objectFit: 'cover' }} alt="..." />
                     </div>
                     <div className="carousel-item" style={{ height: '100%' }}>
-                        <img src="/img/Huincha_Cerveza_Categorias.jpg" className="d-block w-100" style={{ height: '100%', objectFit: 'cover' }} alt="..." />
+                        <img src={`${import.meta.env.BASE_URL}img/Huincha_Cerveza_Categorias.jpg`} className="d-block w-100" style={{ height: '100%', objectFit: 'cover' }} alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
