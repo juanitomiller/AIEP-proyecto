@@ -36,8 +36,15 @@ const Register = () => {
         navigate("/Login");
     };
 
+    const backgroundImageUrl = `${import.meta.env.BASE_URL}img/Background login.jpg`;
+
     return (
-        <div className="plox">
+        <div 
+            className="plox"
+            style={{
+                '--bg-image': `url(${backgroundImageUrl})`,
+            }}
+        >
             <div className="register-container">
                 <h2 className="Logintext">Registro de Usuario</h2>
                 <form onSubmit={handleSubmit} className="register-form">

@@ -64,8 +64,15 @@ export const Login = () => {
     navigate("/profile");
   };
 
+  const backgroundImageUrl = `${import.meta.env.BASE_URL}img/Background login.jpg`;
+
   return (
-    <div className="container plox mt-5">
+    <div 
+      className="container plox mt-5"
+      style={{
+        '--bg-image': `url(${backgroundImageUrl})`,
+      }}
+    >
       <div className="login-form-container">
         <form onSubmit={validarInput}>
           <fieldset>
