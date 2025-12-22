@@ -31,7 +31,24 @@ jobs:
       - name: Build
         env:
           NODE_ENV: production
-        run: npm run build
+        run: npm run build || exit 1
+      
+      - name: Verify build output
+        run: |
+          if [ ! -f "dist/index.html" ]; then
+            echo "Error: dist/index.html not found!"
+            exit 1
+          fi
+          echo "Build output verified"
+          echo "Checking if index.html was processed correctly..."
+          if grep -q "/src/main.jsx" dist/index.html; then
+            echo "ERROR: index.html still contains /src/main.jsx - build may have failed!"
+            echo "Contents of dist/index.html:"
+            cat dist/index.html
+            exit 1
+          fi
+          echo "index.html processed correctly"
+          ls -la dist/
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
