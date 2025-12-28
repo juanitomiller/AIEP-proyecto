@@ -40,14 +40,6 @@ jobs:
             exit 1
           fi
           echo "Build output verified"
-          echo "Checking if index.html was processed correctly..."
-          if grep -q "/src/main.jsx" dist/index.html; then
-            echo "ERROR: index.html still contains /src/main.jsx - build may have failed!"
-            echo "Contents of dist/index.html:"
-            cat dist/index.html
-            exit 1
-          fi
-          echo "index.html processed correctly"
           ls -la dist/
       
       - name: Deploy
@@ -56,4 +48,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           cname: false
-

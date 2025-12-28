@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './assets/components/Navbar';
-import Header from './assets/components/Header';
-import { ProductList } from './assets/components/ProductList';
-import Footer from './assets/components/Footer';
+import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import products from "../data/products";
-import { Login } from './assets/components/Login'; // Asegúrate de importar Login
-import { UserProvider } from './context/UserContext'; // Asegúrate de importar UserProvider
-import { Cart } from './assets/components/Cart';
-import Register from './assets/components/Register';
-import ProductGalery from './assets/components/ProductGalery';
-import { ProductCard } from './assets/components/ProductCard'; // Cambiado: eliminado los corchetes
-import ProductDetail from './assets/components/ProductDetail'; // Asegúrate de importar ProductDetail
-import Profile from "./assets/components/Profile";
+import { Login } from './components/Login';
+import { UserProvider } from './context/UserContext';
+import { Cart } from './components/Cart';
+import Register from './components/Register';
+import ProductGalery from './components/ProductGalery';
+import { ProductCard } from './components/ProductCard';
+import ProductDetail from './components/ProductDetail';
+import Profile from "./components/Profile";
 
 const App = () => {
     const [allProducts, setAllProducts] = useState([]);
@@ -21,7 +20,7 @@ const App = () => {
     const [total, setTotal] = useState(0);
 
     const calculateTotal = (products) => {
-        return products.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+        return products.reduce((sum, product) => sum + (parseInt(product.price) * product.quantity), 0);
     };
 
     const onAddProduct = (product) => {
@@ -44,16 +43,11 @@ const App = () => {
     const onDeleteProduct = (product) => {
         const updatedProducts = allProducts.map(item =>
              item.id === product.id ? {...item, quantity: item.quantity - 1 } : item
-        ). filter(item => item.quantity > 0);
+        ).filter(item => item.quantity > 0);
 
         setAllProducts(updatedProducts);
         setTotal(calculateTotal(updatedProducts));
         setCountProducts(updatedProducts.reduce((total, item) => total + item.quantity, 0));
-
-       /* const updatedProducts = allProducts.filter(item => item.id !== product.id);
-        setAllProducts(updatedProducts);
-        setTotal(calculateTotal(updatedProducts));
-        setCountProducts(countProducts - product.quantity);*/
     };
 
     const onCleanCart = () => {
@@ -66,7 +60,7 @@ const App = () => {
     const featuredProducts = products.slice(0, 4);
 
     return (
-        <UserProvider> {/* Asegúrate de envolver todo el contenido dentro de UserProvider */}
+        <UserProvider>
             <div>
                 <Navbar 
                     countProducts={countProducts}
@@ -129,4 +123,3 @@ const App = () => {
 };
 
 export default App;
-

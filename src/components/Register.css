@@ -1,0 +1,197 @@
+/* Register mejorado - usando estilos similares a Login */
+.plox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.plox::before {
+    content: '';
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-image);
+    filter: blur(8px) brightness(0.7);
+    z-index: -1;
+}
+
+.plox::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.6));
+    z-index: -1;
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: var(--shadow-xl);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 900px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Logintext {
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    padding: 1rem 1.5rem;
+    border-radius: 16px 16px 0 0;
+    margin: -2.5rem -2.5rem 2rem -2.5rem;
+}
+
+/* Estructura de dos columnas */
+.register-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    background: var(--color-white);
+    box-sizing: border-box;
+    height: auto;
+}
+
+.form-group input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    background-color: var(--color-white);
+    transition: all var(--transition-normal);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+    outline: none;
+}
+
+/* Botón de registro mejorado */
+.register-btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+.alert {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid var(--color-accent);
+    color: var(--color-dark);
+}
+
+@media (max-width: 768px) {
+    .register-form {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .left-column,
+    .right-column {
+        min-width: 100%;
+    }
+
+    .register-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .Logintext {
+        margin: -2rem -1.5rem 1.5rem -1.5rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+}
+

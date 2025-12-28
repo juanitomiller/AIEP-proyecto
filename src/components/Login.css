@@ -1,0 +1,193 @@
+/* Contenedor de login mejorado */
+.plox {
+	background-size: cover;
+	background-position: center;
+	min-height: calc(100vh - 200px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 1rem;
+	position: relative;
+}
+
+.plox::before {
+	content: '';
+	position: fixed;
+	background-size: cover;
+	background-position: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: var(--bg-image);
+	filter: blur(8px) brightness(0.7);
+	z-index: -1;
+}
+
+.plox::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.6));
+	z-index: -1;
+}
+
+.Logintext {
+	margin-top: 1.5rem;
+	padding: 1.25rem;
+	border-radius: 0 0 16px 16px;
+	background: linear-gradient(180deg, rgba(245, 245, 245, 0.95), rgba(255, 255, 255, 1));
+	backdrop-filter: blur(10px);
+}
+
+.form-label {
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+	font-family: inherit;
+	color: var(--color-white);
+	box-shadow: var(--shadow-md);
+	border: none;
+	opacity: 0.95;
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-top: 1.5rem;
+	padding: 1rem 1.5rem;
+	border-radius: 16px 16px 0 0;
+	text-align: center;
+	letter-spacing: 0.5px;
+}
+
+.login-form-container {
+	max-width: 450px;
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.container {
+	max-width: 450px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+form {
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 16px;
+	box-shadow: var(--shadow-xl);
+	padding: 2.5rem;
+	width: 100%;
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Inputs mejorados */
+form .form-control {
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	padding: 0.75rem 1rem;
+	font-size: 1rem;
+	transition: all var(--transition-normal);
+	background: var(--color-white);
+}
+
+form .form-control:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+	outline: none;
+}
+
+form .form-control::placeholder {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+/* Botones mejorados */
+.btn-primary {
+	width: 100%;
+	margin-top: 1.5rem;
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+	border: none;
+	padding: 0.875rem 1.5rem;
+	font-weight: 600;
+	font-size: 1rem;
+	border-radius: 8px;
+	box-shadow: var(--shadow-md);
+	transition: all var(--transition-normal);
+	color: var(--color-white);
+}
+
+.btn-primary:hover {
+	background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+	transform: translateY(0);
+}
+
+.register-btn {
+	width: 100%;
+	margin-top: 1.5rem;
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+	border: none;
+	padding: 0.875rem 1.5rem;
+	font-weight: 600;
+	font-size: 1rem;
+	border-radius: 8px;
+	box-shadow: var(--shadow-md);
+	transition: all var(--transition-normal);
+	color: var(--color-white);
+}
+
+.register-btn:hover {
+	background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+}
+
+.register-btn:active {
+	transform: translateY(0);
+}
+
+/* Enlaces en el formulario */
+form a {
+	color: var(--color-primary);
+	font-weight: 500;
+	transition: color var(--transition-fast);
+}
+
+form a:hover {
+	color: var(--color-primary-dark);
+	text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+	.login-form-container {
+		max-width: 95%;
+	}
+	
+	form {
+		padding: 2rem 1.5rem;
+	}
+	
+	.plox {
+		min-height: calc(100vh - 150px);
+		padding: 1rem;
+	}
+}
+

@@ -16,7 +16,7 @@ export const UserProvider = ({ children }) => {
       if (!storedUser) {
         const testUser = {
           email: "usuario@ejemplo.com",
-        password: "123456",
+          password: "123456",
         };
         localStorage.setItem("user", JSON.stringify(testUser));
         setUser(testUser);

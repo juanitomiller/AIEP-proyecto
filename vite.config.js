@@ -4,10 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // IMPORTANTE: 
-  // - Si tu sitio está en: usuario.github.io/repositorio/ → usa '/repositorio/'
-  // - Si tu sitio está en: usuario.github.io/ (raíz) → usa '/'
-  // Verifica la URL real de tu GitHub Pages y ajusta esto
+  // IMPORTANTE: Cambia esto por el nombre de tu repositorio en GitHub
+  // Si tu repositorio se llama "mi-proyecto", usa '/mi-proyecto/'
   base: process.env.NODE_ENV === 'production' ? '/AIEP-proyecto-2/' : '/',
   build: {
     outDir: 'dist',
