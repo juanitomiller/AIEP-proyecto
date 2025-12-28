@@ -8,7 +8,7 @@ export default defineConfig({
   // - Si tu sitio está en: usuario.github.io/repositorio/ → usa '/repositorio/'
   // - Si tu sitio está en: usuario.github.io/ (raíz) → usa '/'
   // Verifica la URL real de tu GitHub Pages y ajusta esto
-  base: process.env.NODE_ENV === 'production' ? '/AIEP-proyecto/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/AIEP-proyecto-2/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
